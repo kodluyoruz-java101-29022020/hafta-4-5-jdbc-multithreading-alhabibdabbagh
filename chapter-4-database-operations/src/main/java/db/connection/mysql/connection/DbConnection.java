@@ -4,10 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DbConnection {
+	//S9HHYQdP81
+		//7mR2jSrEgT
+		//benim
+		//JDIoyUFyCD
+		//qVwkBstQ5U
 
-	private final static String dbHost = "jdbc:mysql://remotemysql.com:3306/S9HHYQdP81?useSSL=false";
-	private final static String userName = "S9HHYQdP81";
-	private final static String password = "7mR2jSrEgT";
+	private final static String dbHost = "jdbc:mysql://remotemysql.com:3306/JDIoyUFyCD?useSSL=false";
+	private final static String userName = "JDIoyUFyCD";
+	private final static String password = "qVwkBstQ5U";
 	private final static String jdbcDriver = "com.mysql.jdbc.Driver";
 	
 	private static Connection connection = null;

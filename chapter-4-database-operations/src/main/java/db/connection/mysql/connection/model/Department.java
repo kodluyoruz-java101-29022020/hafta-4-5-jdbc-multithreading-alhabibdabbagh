@@ -9,6 +9,9 @@ public class Department {
 		this.name = name;
 		this.deptNo = deptNo;
 	}
+	public Department() {
+		// ben olusturdum
+	}
 
 	public String getName() {
 		return name;

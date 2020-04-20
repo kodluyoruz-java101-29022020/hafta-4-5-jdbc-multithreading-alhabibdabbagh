@@ -1,6 +1,7 @@
 package db.connection.mysql.connection.dao;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,28 +15,37 @@ public class DepartmentDAO {
 
 	private static final Logger logger = Logger.getLogger(DepartmentDAO.class);
 
-	
-	public List<Department> getAll() {
+public List<Department> getAll() {
 		
 		List<Department> departments = new ArrayList<Department>();
 		
-		// Tüm departman listesini çeken SQL komutunu aşağıdaki satıra yazınız.
-		ResultSet resultSet = DbSQLQuery.select("<Bu SQL sorgusunu oluştur>");
+	
+		ResultSet resultSet = DbSQLQuery.select("SELECT * FROM departments ");// hepsi getir 
 		
 		try {
-			
-			// ResultSet içinde veritabanından gelen department kayıtları var.
-			// ResultSet üzerinde satır satır ilerleyerek bir Department listesi oluştur.
-			// List<Department> departments bu listeye elemanları ekleyeceksiniz.
-			
-			// Kodlar ... :)
+			if (resultSet ==null) {
+				return departments;
+			}
+			while (resultSet.next()) {
+				departments.add(createDepartment(resultSet));// ekledik arraylist e 
+			}
+	
 			
 		}
 		catch (Exception e) {
 			logger.error(e.getMessage());
 		}
 		
-		return departments;
+		return departments;// bitirdigi zaman dondur service => application => ekran
 	}
-	
+        private Department createDepartment(ResultSet resultSet) throws SQLException {
+		
+		Department department = new Department();// object
+		
+		department.setName(resultSet.getString("dept_name"));// burda resultSet onemli cunku veritabandan gelen bilgiler icindedei
+		department.setDeptNo(resultSet.getString("dept_no"));// o yuzden burda dikkat gerekmeli 
+		
+		
+		return department;
+	}
 }

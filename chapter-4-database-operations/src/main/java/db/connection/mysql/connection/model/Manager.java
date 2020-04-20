@@ -9,6 +9,9 @@ public class Manager {
 		this.employee = employee;
 		this.departmentName = departmentName;
 	}
+	public Manager() {
+		// ben olusturdum
+	}
 	
 	public Employee getEmployee() {
 		return employee;
