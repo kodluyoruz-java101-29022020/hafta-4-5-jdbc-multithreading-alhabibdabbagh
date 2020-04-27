@@ -20,6 +20,7 @@ public class Main {
 
 		ThreadHavuz.ciftSayilariYazdir();// yazdirma
 		ThreadHavuz.tekSayilariYazdir();
+		// thread.ciftSayilariYazdir();
 
 	}
 }
